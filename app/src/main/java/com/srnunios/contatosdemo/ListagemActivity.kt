@@ -12,6 +12,7 @@ import com.srnunios.contatosdemo.R
 import kotlinx.android.synthetic.main.activity_listagem.*
 import android.provider.ContactsContract.CommonDataKinds.Phone
 import android.support.v4.app.ActivityCompat
+import java.util.*
 
 
 class ListagemActivity : AppCompatActivity() {
@@ -72,7 +73,9 @@ class ListagemActivity : AppCompatActivity() {
     }
 
     private fun run() {
-        adapterContactos!!.contactos.addAll(getRawContactsIdList())
+        var list = getRawContactsIdList()
+        Collections.sort(list)
+        adapterContactos!!.contactos.addAll(list)
         adapterContactos!!.notifyDataSetChanged()
     }
 
