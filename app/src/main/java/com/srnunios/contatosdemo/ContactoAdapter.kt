@@ -25,8 +25,8 @@ class ContactoAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     override fun onBindViewHolder(p0: RecyclerView.ViewHolder, p1: Int) {
         var contacto = contactos.get(p1)
-        (p0 as ContactoModel).nome!!.setText(""+contacto.nome)
-        (p0 as ContactoModel).numero!!.setText(""+contacto.numero)
+        (p0 as ContactoModel).nome!!.setText(""+contacto.name)
+        (p0 as ContactoModel).numero!!.setText(""+contacto.number)
     }
 
     class ContactoModel(itemView: View) : RecyclerView.ViewHolder(itemView) {
